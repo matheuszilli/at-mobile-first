@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    border: 3px solid #000000;
+    padding: 5px;
+}
+.card-topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.card-topo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 5px;
+    text-align: center
+}
+.card-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,66 @@
+.gridContainer {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "globalMenu"
+      "ads"
+      "contextMenu"
+      "mainContent"
+      "footer";
+    gap: 10px;
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .globalMenu {
+    grid-area: globalMenu;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contextMenu {
+    grid-area: contextMenu;
+    background-color: lightcoral;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .mainContent {
+    grid-area: mainContent;
+    background-color: lightgreen;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .ads {
+    grid-area: ads;
+    background-color: lightyellow;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer {
+    grid-area: footer;
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .gridContainer {
+      grid-template-areas:
+      "header header header"
+      "globalMenu globalMenu ads"
+      "contextMenu mainContent ads"
+      "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto auto 1fr auto;
+    }
+  }
+  
