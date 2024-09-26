@@ -1,10 +1,10 @@
 import React from 'react';
-import Menu from './Menu';
+import MenuResponsivo from './MenuResponsivo';
 
 function App() {
   return (
-    <div>
-      <Menu />
+    <div className="App">
+      <MenuResponsivo />
     </div>
   );
 }

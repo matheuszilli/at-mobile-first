@@ -1,23 +1,26 @@
+// src/App.jsx
 import React from 'react';
+import estilos from './App.module.css';
+import Cabecalho from './components/Cabecalho/Cabecalho';
+import MenuGlobal from './components/MenuGlobal/MenuGlobal';
+import MenuContextualizado from './components/MenuContextualizado/MenuContextualizado';
+import ConteudoPrincipal from './components/ConteudoPrincipal/ConteudoPrincipal';
+import AreaAnuncio from './components/AreaAnuncio/AreaAnuncio';
+import Rodape from './components/Rodape/Rodape';
 
-
-import Header from './Header';
-import Menu from './Menu';
-import Feed from './Feed';
-import FriendList from './FriendList';
-import Suggestions from './Suggestions';
-import './App.css';
-
-export default function App() {
+function App() {
   return (
-    <div className="container">
-      <Header />
-      <Menu />
-      <div className='main-content'>
-        <Feed />
-        <FriendList />
-        <Suggestions />
+    <div className={estilos.app}>
+      <Cabecalho />
+      <MenuGlobal />
+      <div className={estilos.container}>
+        <MenuContextualizado />
+        <ConteudoPrincipal />
+        <AreaAnuncio />
       </div>
+      <Rodape />
     </div>
-  )
+  );
 }
+
+export default App;

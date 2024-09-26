@@ -1,23 +1,47 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
+function ListaCompras() {
+  const items = [
+    { id: 1, nome: "Arroz", preco: 7.99, quantidade: 2 },
+    { id: 2, nome: "Feijao", preco: 8.50, quantidade: 2 },
+    { id: 3, nome: "Batata Palha", preco: 7.99, quantidade: 1 },
+    { id: 4, nome: "Pudim", preco: 15.90, quantidade: 1 },
+    { id: 5, nome: "Biscoito", preco: 2.85, quantidade: 5 },
+    { id: 6, nome: "Refrigerante", preco: 7.99, quantidade: 1 },
+  ];
+  
+  const calcularItemTotal = (preco, quantidade) => {
+    return preco * quantidade;
+  };
+
+  const calcularTotal = () => {
+    return items.reduce(
+      (total, item) => total + calcularItemTotal(item.preco, item.quantidade),
+      0
+    );
+  };
+
   return (
-    <div className="container">
-      <h2 className="titulo-h2">Desenvolvimento Front-End com Frameworks</h2>
-      <h3 className="titulo-h3">Mobile-First UI com React</h3>
-      <h4 className="titulo-h4">Conceitos de Usabilidade</h4>
-      <p className="texto">
-        A usabilidade está relacionada à facilidade de uso de uma interface por parte do usuário. Interfaces com boa usabilidade permitem que o usuário navegue e utilize seus recursos de forma intuitiva, sem precisar de muita experiência ou treinamento.
-      </p>
-      <p className="texto">
-        O design de usabilidade inclui vários fatores como eficiência, eficácia e satisfação do usuário ao interagir com o sistema. Um bom projeto de usabilidade pode melhorar significativamente a experiência do usuário.
-      </p>
-      <p className="texto">
-        O conceito de usabilidade está profundamente interligado à acessibilidade, que visa garantir que o sistema seja acessível a todos os tipos de usuários, incluindo pessoas com deficiência.
-      </p>
+    <div className="compras-container">
+      <h1>Lista de Compras</h1>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id} className="compra-item">
+            <span>{item.nome}</span>
+            <span>R$ {item.preco.toFixed(2)}</span>
+            <span>Quantidade: {item.quantidade}</span>
+            <span>
+              Total: R$ {calcularItemTotal(item.preco, item.quantidade).toFixed(2)}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <div className="total-compra">
+        <h2>Total da Compra: R$ {calcularTotal().toFixed(2)}</h2>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default ListaCompras;

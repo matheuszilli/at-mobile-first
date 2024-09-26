@@ -1,17 +1,42 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import styled from "styled-components";
+import FuncInfo from "./FuncionarioInfo";
+import Tarefas from "./Tarefas";
 
-function Card({ image, title, description, footer }) {
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
+
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
+const Card = () => {
   return (
-    <div className="card-container">
-      <img src={image} alt="Imagem" className="card-image" />
-      <div className="card-content">
-        <h2 className="card-title">{title}</h2>
-        <p className="card-description">{description}</p>
-        <p className="card-footer">{footer}</p>
-      </div>
-    </div>
+    <CardContainer>
+      <InfoWrapper>
+        <FuncInfo />
+        <Tarefas />
+      </InfoWrapper>
+    </CardContainer>
   );
-}
+};
 
 export default Card;

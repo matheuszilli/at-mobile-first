@@ -1,0 +1,45 @@
+.menu-container {
+    width: 100%;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .cabecalho-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .botao-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+  }
+
+  .marca {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .icone-perfil {
+    font-size: 24px;
+  }
+  
+  .opcoes-container {
+    background-color: #fff;
+  }
+  
+  .opcao-menu {
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .opcao-menu:hover {
+    background-color: #f0f0f0;
+  }
+  

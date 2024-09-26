@@ -1,0 +1,58 @@
+.menu-responsivo {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .menu-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .botao-menu,
+  .botao-perfil {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .marca-plataforma {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .lista-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .item-menu {
+    padding: 10px 0;
+    border-top: 1px solid #444;
+  }
+  
+  @media (min-width: 769px) {
+    .menu-superior {
+      flex-direction: row;
+    }
+  
+    .botao-menu,
+    .botao-perfil {
+      display: none;
+    }
+  
+    .lista-menu {
+      display: flex;
+      margin-top: 0;
+    }
+  
+    .item-menu {
+      border: none;
+      margin-left: 20px;
+    }
+  }
+  

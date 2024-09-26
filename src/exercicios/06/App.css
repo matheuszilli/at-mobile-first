@@ -1,26 +1,49 @@
-.titulo-h2 {
-  font-size: clamp(20px, 5vw, 40px); 
-  text-align: center;
-  margin-bottom: 20px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-.titulo-h3 {
-  font-size: clamp(18px, 4vw, 35px);
-  text-align: center;
-  margin-bottom: 15px;
+.compras-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.titulo-h4 {
-  font-size: clamp(16px, 3.5vw, 30px);
-  text-align: center;
-  margin-bottom: 10px;
+ul {
+  list-style: none;
 }
 
+.compra-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
 
-.texto {
-  font-size: clamp(14px, 3vw, 25px);
-  text-align: justify;
-  text-indent: 20px;
-  padding: 0 20px;
-  margin-bottom: 15px;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .compras-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+
+  .compra-item {
+    border-bottom: 1px solid #333;
+  }
+
+  .compra-item span {
+    color: #e0e0e0;
+  }
+
+  .total-compra {
+    color: #ffcc00;
+  }
 }
