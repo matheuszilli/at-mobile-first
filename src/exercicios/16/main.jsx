@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './main.css'
+// src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css'; 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div>
-    <App />
-  </div>
-)
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);

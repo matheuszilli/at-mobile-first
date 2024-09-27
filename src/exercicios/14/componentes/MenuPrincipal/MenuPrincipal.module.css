@@ -1,0 +1,50 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .opcoes {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .opcoes.aberto {
+    display: block;
+  }
+  
+  .hamburguer {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .opcoes {
+      display: none;
+      flex-direction: column;
+      background-color: #2d2d2d;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 150px;
+      padding: 10px;
+    }
+  
+    .opcoes.aberto {
+      display: flex;
+    }
+  
+    .hamburguer {
+      display: block;
+    }
+  }
+  

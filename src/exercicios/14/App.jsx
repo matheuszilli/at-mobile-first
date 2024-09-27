@@ -1,109 +1,90 @@
 import React, { useState } from 'react';
-import Question from './Question';
-import './styles.css'
+import MenuPrincipal from './componentes/MenuPrincipal/MenuPrincipal';
+import TopicoPrincipal from './componentes/TopicoPrincipal/TopicoPrincipal';
+import ListaRespostas from './componentes/ListaRespostas/ListaRespostas';
+import FormularioResposta from './componentes/FormularioResposta/FormularioResposta';
+import RelacaoTopicos from './componentes/RelacaoTopico/RelacaoTopico';
+import estilos from './App.module.css';
 
-export default function App() {
-  const questions = [
+function App() {
+  const [respostas, setRespostas] = useState([
     {
       id: 1,
-      enunciado: 'Qual é a capital da França?',
-      opcoes: ['Berlim', 'Madri', 'Paris', 'Lisboa'],
-      respostaCorreta: 'Paris',
+      resposta: 'Concordo com o professor Tiago',
+      autor: 'Maria',
+      data: '2024-04-20',
+      curtidas: 10
     },
     {
       id: 2,
-      enunciado: 'Qual é o maior planeta do sistema solar?',
-      opcoes: ['Terra', 'Júpiter', 'Marte', 'Saturno'],
-      respostaCorreta: 'Júpiter',
+      resposta: 'Gostaria de saber mais sobre react',
+      autor: 'João',
+      data: '2024-04-21',
+      curtidas: 5
     },
     {
       id: 3,
-      enunciado: 'Qual materia não esta sendo estudada nesse semestra?',
-      opcoes: ['Mobile', 'React', 'Projeto', 'Python'],
-      respostaCorreta: 'Python',
+      resposta: 'QUE AT DIFICIL',
+      autor: 'Ana',
+      data: '2024-04-22',
+      curtidas: 8
     },
     {
       id: 4,
-      enunciado: 'Qual maior campeão de copas do mundo?',
-      opcoes: ['Argentina', 'Brasil', 'Alemanha', 'Argélia'],
-      respostaCorreta: 'Brasil',
+      resposta: 'Gooool do São Paulo',
+      autor: 'Carlos',
+      data: '2024-04-23',
+      curtidas: 3
     },
     {
       id: 5,
-      enunciado: 'Por que as pessoas escolhem IFNET?',
-      opcoes: ['EAD ao Vivo', 'Modalidade de Projetos', 'Professores', 'Todas as Anteriores'],
-      respostaCorreta: 'Todas as Anteriores',
+      resposta: 'Falta tempo para estudar',
+      autor: 'Fernanda',
+      data: '2024-04-24',
+      curtidas: 7
     },
-    {
-      id: 6,
-      enunciado: 'Quem é o vilão mais famoso de Batman?',
-      opcoes: ['Lula', 'Bolsonaro', 'Zé Vaqueiro', 'Coringa'],
-      respostaCorreta: 'Coringa',
-    },
-    {
-      id: 7,
-      enunciado: 'Qual maior animal do planeta?',
-      opcoes: ['Baleia Azul', 'Elefante', 'Jubarte'],
-      respostaCorreta: 'Baleia Azul',
-    },
-    {
-      id: 8,
-      enunciado: 'Em qual ano Coritiba foi campeão Brasileiro?',
-      opcoes: ['1985', '2001', '1987', '1995'],
-      respostaCorreta: '1985',
-    },
-    {
-      id: 9,
-      enunciado: 'Uma reposição de estoque entra diretamente no DRE como Despesa?',
-      opcoes: ['Sim', 'Não, pois estoque é um ativo e ativo não vai para o DRE',],
-      respostaCorreta: 'Não, pois estoque é um ativo e ativo não vai para o DRE',
-    },
-    {
-      id: 9,
-      enunciado: 'Contra quem foi a última vitoria do Brasil nas eliminatórioas?',
-      opcoes: ['Equador', 'Paraguai,', 'Peru', 'Uruguai'],
-      respostaCorreta: 'Equador',
-    },
-  ];
+  ]);
 
-  const [questaoAtual, setQuestaoAtual] = useState(0);
-  const [pontuacao, setPontuacao] = useState(0);
-  const [quizFinalizado, setQuizFinalizado] = useState(false);
-  const [tema, setTema] = useState('light');
-
-  const handleSubmit = (respostaEscolhida) => {
-    if (respostaEscolhida === questions[questaoAtual].respostaCorreta) {
-      setPontuacao(pontuacao + 1);
-    }
-
-    const proximaQuestao = questaoAtual + 1;
-    if (proximaQuestao < questions.length) {
-      setQuestaoAtual(proximaQuestao);
-    } else {
-      setQuizFinalizado(true);
-    }
+  const topico = {
+    titulo: 'Discussão sobre React',
+    subtitulo: 'Melhores práticas e padrões',
+    descricao: 'Aqui fica livre para que qualquer um traga pontos sobre React',
+    autor: 'Professor Tiago',
+    dataPublicacao: '2024-04-18',
+    curtidas: 25,
+    respostas: respostas.length
   };
 
-  const alternarTema = () => {
-    setTema(tema === 'light' ? 'dark' : 'light');
+  const topicosRecentes = [
+  ];
+
+  const topicosRespondidos = [
+  ];
+
+  const topicosCurtidos = [
+  ];
+
+  const adicionarResposta = (novaResposta) => {
+    setRespostas([...respostas, { id: respostas.length + 1, ...novaResposta, curtidas: 0 }]);
   };
 
   return (
-    <div className={tema}>
-      <button onClick={alternarTema}>
-        Alternar para tema {tema === 'light' ? 'dark' : 'light'}
-      </button>
-      {!quizFinalizado ? (
-        <Question
-          question={questions[questaoAtual]}
-          handleSubmit={handleSubmit}
+    <div className={estilos.container}>
+      <MenuPrincipal />
+      <main className={estilos.principal}>
+        <TopicoPrincipal dados={topico} />
+        <ListaRespostas respostas={respostas} />
+        <FormularioResposta adicionarResposta={adicionarResposta} usuarioAutenticado="Você" />
+      </main>
+      <aside className={estilos.lateral}>
+        <RelacaoTopicos
+          recentes={topicosRecentes}
+          respondidos={topicosRespondidos}
+          curtidos={topicosCurtidos}
         />
-      ) : (
-        <div>
-          <h2>Quiz Finalizado!</h2>
-          <p>Sua pontuação: {pontuacao} de {questions.length}</p>
-        </div>
-      )}
+      </aside>
     </div>
   );
 }
+
+export default App;

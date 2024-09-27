@@ -1,0 +1,27 @@
+.relacao {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 1px solid #ddd;
+  }
+  
+  .relacao section {
+    margin-bottom: 20px;
+  }
+  
+  .relacao h4 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+  }
+  
+  .relacao ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .relacao li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #555;
+  }
+  

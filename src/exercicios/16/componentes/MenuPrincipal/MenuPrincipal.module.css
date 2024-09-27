@@ -1,0 +1,60 @@
+.menu {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .botaoMenu {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .lista {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+  
+  .lista.aberto {
+    display: flex;
+  }
+  
+  .lista li {
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+  }
+  
+  .lista li:hover {
+    background-color: #555;
+  }
+  
+  @media (min-width: 600px) {
+    .botaoMenu {
+      display: none;
+    }
+  
+    .lista {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .lista li {
+      border: none;
+      padding: 0;
+    }
+  
+    .lista li:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+  

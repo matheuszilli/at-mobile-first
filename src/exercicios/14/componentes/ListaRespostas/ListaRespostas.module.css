@@ -1,0 +1,21 @@
+.lista {
+    margin-top: 20px;
+  }
+  
+  .item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .informacoes {
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #666;
+  }
+  
+  .informacoes span {
+    margin-right: 10px;
+  }
+  

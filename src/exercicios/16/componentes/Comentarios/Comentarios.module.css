@@ -1,0 +1,25 @@
+.comentarios {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .comentarios ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comentario {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .comentario:last-child {
+    border-bottom: none;
+  }
+  
+  .nota {
+    font-size: 0.9em;
+    color: #ff9800;
+  }
+  

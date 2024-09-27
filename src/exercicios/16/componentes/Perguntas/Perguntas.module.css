@@ -1,0 +1,20 @@
+.perguntas {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .perguntas ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pergunta {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .pergunta:last-child {
+    border-bottom: none;
+  }
+  
